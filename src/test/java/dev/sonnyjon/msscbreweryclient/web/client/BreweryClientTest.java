@@ -1,6 +1,7 @@
 package dev.sonnyjon.msscbreweryclient.web.client;
 
 import dev.sonnyjon.msscbreweryclient.web.dto.BeerDto;
+import dev.sonnyjon.msscbreweryclient.web.dto.CustomerDto;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +60,45 @@ class BreweryClientTest
     void givenUUID_whenDeleteBeer_thenDeleteMethod()
     {
         client.deleteBeer( UUID.randomUUID() );
+    }
+
+    @Test
+    void givenUUID_whenGetCustomerById_thenCustomerDto()
+    {
+        CustomerDto dto = client.getCustomerById( UUID.randomUUID() );
+        assertNotNull( dto );
+    }
+
+    @Test
+    void givenCustomerDto_whenSaveNewCustomer_thenUri()
+    {
+        // given
+        CustomerDto testCustomer = CustomerDto.builder().name( "New Customer" ).build();
+
+        // when
+        URI uri = client.saveNewCustomer( testCustomer );
+
+        // then
+        assertNotNull( uri );
+        log.info( "URI: " + uri );
+    }
+
+    @Test
+    void givenCustomerDto_whenUpdateCustomer_thenPutMethod()
+    {
+        // given
+        CustomerDto testCustomer = CustomerDto.builder()
+                .id( UUID.randomUUID() )
+                .name( "Some Customer" )
+                .build();
+
+        // when, then
+        client.updateCustomer( testCustomer );
+    }
+
+    @Test
+    void givenUUID_whenDeleteCustomer_thenDeleteMethod()
+    {
+        client.deleteCustomer( UUID.randomUUID() );
     }
 }
