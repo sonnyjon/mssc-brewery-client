@@ -14,7 +14,7 @@ import java.util.UUID;
  * Created by Sonny on 8/22/2022.
  */
 @Component
-@ConfigurationProperties(value = "sj.brewery", ignoreUnknownFields = false)
+@ConfigurationProperties(value = "pub.brewery", ignoreUnknownFields = false)
 public class BreweryClient
 {
     public static final String V1_BEER_PATH = "/api/v1/beer/";
