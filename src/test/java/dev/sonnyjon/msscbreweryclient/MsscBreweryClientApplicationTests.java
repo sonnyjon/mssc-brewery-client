@@ -1,4 +1,4 @@
-package guru.springframework.msscbreweryclient;
+package dev.sonnyjon.msscbreweryclient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
