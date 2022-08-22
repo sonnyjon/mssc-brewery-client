@@ -1,4 +1,4 @@
-package guru.springframework.msscbreweryclient;
+package dev.sonnyjon.msscbreweryclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

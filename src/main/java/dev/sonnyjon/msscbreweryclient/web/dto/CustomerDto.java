@@ -1,4 +1,4 @@
-package guru.springframework.msscbreweryclient.web.model;
+package dev.sonnyjon.msscbreweryclient.web.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,8 +14,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CustomerDto {
-
+public class CustomerDto
+{
     private UUID id;
     private String name;
 }
